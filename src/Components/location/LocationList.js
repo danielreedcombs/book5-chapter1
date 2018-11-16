@@ -1,13 +1,21 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
 
-export default class LocationList extends Component {
-  render(){
-    return(
-    <div>
-      <h1> locations</h1>
-      <section> Nashville North</section>
-      <section> Nashville South</section>
-    </div>
-    )
-  }
+
+class LocationList extends Component {
+    render() {
+        return (
+            <section className="location">
+            <h1>Location</h1>
+            {
+                this.props.locations.map(location =>
+                    <div key={location.id}>
+                        {location.name}
+                    </div>
+                )
+            }
+            </section>
+        )
+    }
 }
+
+export default LocationList
