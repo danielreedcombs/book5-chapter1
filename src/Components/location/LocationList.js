@@ -5,10 +5,10 @@ class LocationList extends Component {
     render() {
         return (
             <section className="location">
-            <h1>Location</h1>
             {
                 this.props.locations.map(location =>
                     <div key={location.id}>
+                    <h1>Location {location.id}</h1>
                         {location.name}
                     </div>
                 )

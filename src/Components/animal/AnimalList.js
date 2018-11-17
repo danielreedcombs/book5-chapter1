@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 
 class AnimalList extends Component {
+
     render(){
+
         return(
             <section className="animals">
             <h1> Animals</h1>
