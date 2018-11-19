@@ -1,14 +1,19 @@
 import React, {Component} from 'react'
-
-class OwnerList extends Component {
-    render() {
+export default class OwnerList extends Component {
+    render () {
         return (
-            <section className="Owner">
+            <section className="Owners">
             {
                 this.props.owners.map(owner =>
                     <div key={owner.id}>
-                    <h1> Owners {owner.id}</h1>
-                        {owner.name}
+                        <div key={owner.id} className="owners">
+                            <h5 className="owners">
+                                {owner.name}
+                                <a href="#"
+                                    onClick={() => this.props.deleteOwners(owner.id)}
+                                    > Fire </a>
+                            </h5>
+                        </div>
                     </div>
                 )
             }
@@ -17,4 +22,4 @@ class OwnerList extends Component {
     }
 }
 
-export default OwnerList
+

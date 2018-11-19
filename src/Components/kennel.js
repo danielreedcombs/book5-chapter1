@@ -10,8 +10,6 @@ class Kennel extends Component {
         return (
             <React.Fragment>
                 <NavBar/>
-                <br></br>
-                <br></br>
                 <ApplicationViews />
             </React.Fragment>
         )

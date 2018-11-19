@@ -1,0 +1,63 @@
+{
+  "animals": [
+    {
+      "id": 1,
+      "name": "Doodles"
+    },
+    {
+      "id": 2,
+      "name": "Jack"
+    },
+    {
+      "id": 5,
+      "name": "Derkins"
+    },
+    {
+      "id": 6,
+      "name": "Checkers"
+    }
+  ],
+  "employees": [
+    {
+      "id": 2,
+      "name": "albert"
+    },
+    {
+      "id": 3,
+      "name": "albert"
+    },
+    {
+      "id": 4,
+      "name": "albert"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Nashville North",
+      "address": "500 Circle Way"
+    },
+    {
+      "id": 2,
+      "name": "Nashville South",
+      "address": "10101 Binary Court"
+    }
+  ],
+  "owners": [
+    {
+      "id": 2,
+      "name": "bill",
+      "phoneNumber": "828-773-1528"
+    },
+    {
+      "id": 3,
+      "name": "till",
+      "phoneNumber": "828-773-1527"
+    },
+    {
+      "id": 4,
+      "name": "kill",
+      "phoneNumber": "828-773-1526"
+    }
+  ]
+}
