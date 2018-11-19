@@ -4,7 +4,10 @@ import AnimalList from './animal/AnimalList'
 import LocationList from './location/LocationList'
 import EmployeeList from './employee/EmployeeList'
 import OwnerList from './owners/OwnerList'
-
+import animalManager from "../modules/animalManager"
+import OwnerManager from "../modules/ownerManager"
+import locationManager from "../modules/locationManager"
+import employeeManager from "../modules/employeeManager"
 export default class ApplicationViews extends Component {
     state = {
         animals:[],
@@ -54,23 +57,29 @@ deleteOwners = id => {
 
 componentDidMount(){
 const newState ={}
-
-    fetch("http://localhost:8088/animals")
-        .then(r => r.json())
-        .then(animals => newState.animals = animals)
-        .then(() => fetch("http://localhost:8088/employees")
-        .then(r => r.json()))
-        .then(employees => newState.employees = employees)
-        .then(() => fetch("http://localhost:8088/owners")
-        .then(owners => owners.json()))
-        .then(owners => newState.owners = owners)
-        .then(() => fetch("http://localhost:8088/locations")
-        .then(r => r.json()))
-        .then(locations => newState.locations = locations)
-        .then (() => this.setState(newState))
+animalManager.getAll().then(allAnimals => {
+    this.setState({
+        animals: allAnimals
+    })
+})
+    employeeManager.getAll().then(allEmployees => {
+        this.setState({
+            employees: allEmployees
+    })
+})
+    locationManager.getAll().then(allLocations => {
+        this.setState({
+            locations:allLocations
+    })
+})
+    OwnerManager.getAll().then(allOwners => {
+        this.setState({
+            owners:allOwners
+    })
+})
 }
 
-    render() {
+    render(){
         return (
             <React.Fragment>
                 <Route exact path="/locations" render={(props) => {
@@ -87,5 +96,5 @@ const newState ={}
                 }} />
             </React.Fragment>
         )
-    }
+            }
 }
